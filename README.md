@@ -16,7 +16,9 @@ Starter project for Your Spring Boot Apps with JWT authentication
 3. Using the pgAdmin interface or your psql, create a database called jwtstarter. If you wish to name this database different, update the database configuration in the application.properties file.
 4. Update application.properties file with your database username and password
 ![image](https://github.com/user-attachments/assets/5015eb91-ffdc-45cc-9afa-f29690014928)
-5. Run Project
+5. CREATE 'USER' in ROLE table  ![image](https://github.com/user-attachments/assets/337c1348-369a-4582-aacf-2b49c45bd617)
+
+6. Run Project
 
 
 
