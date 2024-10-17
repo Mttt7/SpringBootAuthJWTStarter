@@ -95,7 +95,7 @@ public class AuthController {
         user.setLastName(registerDto.getLastName());
         user.setEmail(registerDto.getEmail());
         user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
-        //user.setPhotoUrl("https://firebasestorage.googleapis.com/");
+
 
         Role role = roleRepository.findByName("USER").get();
         user.setRoles(Collections.singletonList(role));

@@ -34,6 +34,7 @@ public class SecurityConfig {
                 )
                 .httpBasic(Customizer.withDefaults());
 
+
         http.sessionManagement(session -> session.sessionCreationPolicy(STATELESS));
 
         http.exceptionHandling((
