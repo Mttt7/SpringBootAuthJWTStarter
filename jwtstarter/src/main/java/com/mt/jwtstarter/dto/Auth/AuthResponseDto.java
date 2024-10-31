@@ -1,8 +1,5 @@
 package com.mt.jwtstarter.dto.Auth;
 
-
-
-import com.mt.jwtstarter.model.UserEntity;
 import lombok.Data;
 
 @Data

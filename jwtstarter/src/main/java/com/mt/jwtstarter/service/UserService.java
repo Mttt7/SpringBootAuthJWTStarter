@@ -1,11 +1,8 @@
 package com.mt.jwtstarter.service;
 
-
-
 import com.mt.jwtstarter.dto.Auth.UserResponseDto;
 import org.springframework.data.domain.Page;
 
-import java.util.List;
 
 public interface UserService {
 
@@ -18,6 +15,5 @@ public interface UserService {
     Boolean checkEmailAvailability(String email);
 
     Page<UserResponseDto> searchForUser(String query, int pageNumber, int pageSize);
-
 
 }

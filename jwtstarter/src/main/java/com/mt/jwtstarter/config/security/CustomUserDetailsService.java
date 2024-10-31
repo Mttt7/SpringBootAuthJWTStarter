@@ -1,7 +1,6 @@
 package com.mt.jwtstarter.config.security;
 
 
-
 import com.mt.jwtstarter.exception.EmailNotFound;
 import com.mt.jwtstarter.model.Role;
 import com.mt.jwtstarter.model.UserEntity;
@@ -12,7 +11,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -24,6 +22,7 @@ import java.util.stream.Collectors;
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
+
     @Override
     public UserDetails loadUserByUsername(String email) throws EmailNotFound {
         UserEntity userEntity = userRepository.findByEmail(email).orElseThrow(
@@ -35,7 +34,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         );
     }
 
-    private Collection<GrantedAuthority> mapRolesToAuthorities(List<Role> roles){
+    private Collection<GrantedAuthority> mapRolesToAuthorities(List<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
 }

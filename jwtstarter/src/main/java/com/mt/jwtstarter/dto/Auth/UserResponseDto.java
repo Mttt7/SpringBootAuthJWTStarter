@@ -1,12 +1,10 @@
 package com.mt.jwtstarter.dto.Auth;
 
-
 import com.mt.jwtstarter.model.Role;
-import lombok.Builder;
-import lombok.Data;
-
 import java.sql.Timestamp;
 import java.util.List;
+import lombok.Builder;
+import lombok.Data;
 
 @Data
 @Builder

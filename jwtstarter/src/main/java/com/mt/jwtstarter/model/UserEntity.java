@@ -1,15 +1,13 @@
 package com.mt.jwtstarter.model;
 
 import jakarta.persistence.*;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
-import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.List;
-
 
 @Entity
 @Data
@@ -51,7 +49,6 @@ public class UserEntity {
     @Column(name = "last_updated")
     @UpdateTimestamp
     private Timestamp lastUpdated;
-
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "user_role",joinColumns = @JoinColumn(name = "user_id",referencedColumnName = "id"),

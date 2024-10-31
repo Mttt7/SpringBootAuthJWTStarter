@@ -5,8 +5,8 @@ import com.mt.jwtstarter.exception.UserNotFound;
 import com.mt.jwtstarter.mapper.UserMapper;
 import com.mt.jwtstarter.model.UserEntity;
 import com.mt.jwtstarter.repository.UserRepository;
-import com.mt.jwtstarter.service.AuthService;
 import com.mt.jwtstarter.service.UserService;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -15,16 +15,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-
-import java.util.stream.Collectors;
-
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
-    private final AuthService authService;
-
 
     @Override
     public Long getUserId() {
@@ -49,8 +44,6 @@ public class UserServiceImpl implements UserService {
     public Boolean checkEmailAvailability(String email) {
         return !userRepository.existsByEmail(email);
     }
-
-
 
     @Override
     public Page<UserResponseDto> searchForUser(String query, int pageNumber, int pageSize) {

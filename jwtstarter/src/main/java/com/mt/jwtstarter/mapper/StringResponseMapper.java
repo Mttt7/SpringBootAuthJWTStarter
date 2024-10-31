@@ -1,9 +1,7 @@
 package com.mt.jwtstarter.mapper;
 
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 
 @Service
